@@ -1,0 +1,12 @@
+a {
+    color: #cc3300 !important;
+}
+
+.btn-primary.btn-custom {
+    background-color: #cc3300;
+    border-color: #cc3300;
+}
+
+.smaller {
+    font-size: 0.8em;
+}
