@@ -2,10 +2,8 @@
     "name": "TaxaFind",
     "short_name": "TaxaFind",
 	"version": "0.1.0",
-    "default_locale": "en",
     "description": "Find taxa in biodiversity databases such as GBIF, OBIS, WoRMS and iNaturalist.",
     "author": "Pieter Provoost",
-	"description": "TaxaFind",
 	"manifest_version": 2,
 	"background": { 
 		"scripts": [ "background.js" ]

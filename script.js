@@ -56,6 +56,7 @@ const search = function() {
     obis(name).then(add)
     worms(name).then(add)
     inaturalist(name).then(add)
+    eol(name).then(add)
 }
 
 const gbif = async function(name) {
@@ -131,6 +132,22 @@ const inaturalist = async function(name) {
         result.acceptedNameUsageID = taxon.id
         result.link = "https://www.inaturalist.org/taxa/" + taxon.id
         result.records = taxon.observations_count
+        results.push(result)
+    }
+    return results
+}
+
+const eol = async function(name) {
+    let results = []
+    let res = await $.get("https://eol.org/api/search/1.0.json?q=" + name)
+    if (res != null && res.results && res.results.length >= 1) {
+        let result = {
+            provider: "EOL"
+        }
+        let taxon = res.results[0]
+        result.acceptedNameUsage = taxon.title
+        result.acceptedNameUsageID = taxon.id
+        result.link = "https://eol.org/pages/" + taxon.id
         results.push(result)
     }
     return results
